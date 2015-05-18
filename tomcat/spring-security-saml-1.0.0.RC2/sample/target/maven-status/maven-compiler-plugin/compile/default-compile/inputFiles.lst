@@ -1,0 +1,3 @@
+/home/saul/code/docker/tomcat/spring-security-saml-1.0.0.RC2/sample/src/main/java/org/springframework/security/saml/web/MetadataController.java
+/home/saul/code/docker/tomcat/spring-security-saml-1.0.0.RC2/sample/src/main/java/org/springframework/security/saml/web/MetadataValidator.java
+/home/saul/code/docker/tomcat/spring-security-saml-1.0.0.RC2/sample/src/main/java/org/springframework/security/saml/web/MetadataForm.java

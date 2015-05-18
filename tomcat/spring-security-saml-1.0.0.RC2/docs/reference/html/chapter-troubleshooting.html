@@ -1,0 +1,29 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>7.&nbsp;Troubleshooting</title><link rel="stylesheet" href="css/manual-multipage.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.75.2"><link rel="home" href="index.html" title="Spring Security SAML Extension"><link rel="up" href="integration.html" title="Part&nbsp;II.&nbsp;Configuring SSO with SAML"><link rel="prev" href="chapter-idp-guide.html" title="6.&nbsp;IDP integration guide"><link rel="next" href="chapter-configuration-reference.html" title="Appendix&nbsp;A.&nbsp;Configuration reference"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">7.&nbsp;Troubleshooting</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="chapter-idp-guide.html">Prev</a>&nbsp;</td><th width="60%" align="center">Part&nbsp;II.&nbsp;Configuring SSO with SAML</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="chapter-configuration-reference.html">Next</a></td></tr></table><hr></div><div class="chapter" title="7.&nbsp;Troubleshooting"><div class="titlepage"><div><div><h2 class="title"><a name="chapter-troubleshooting"></a>7.&nbsp;Troubleshooting</h2></div></div></div>
+	
+
+	<div class="section" title="7.1&nbsp;Logging"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="chapter-troubleshooting-logging"></a>7.1&nbsp;Logging</h2></div></div></div>
+	  
+	  <p>SAML Extension uses <a class="ulink" href="http://www.slf4j.org/" target="_top">SLF4J framework</a> for logging. The same applies to the underlaying OpenSAML
+	  library. The sample application by default uses log4j version 1.2 binding for SLF4J.</p>
+	  <p>You can enable debug logging by modifying file <span class="emphasis"><em>saml2-sample/src/main/resources/log4j.properties</em></span> and adding:
+			</p><pre class="programlisting">log4j.logger.org.springframework.security.saml=DEBUG
+log4j.logger.org.opensaml=DEBUG</pre>
+	  <p>For details about using other logging frameworks please consult the <a class="ulink" href="http://www.slf4j.org/manual.html" target="_top">SLF4J manual</a>.</p>
+	</div>
+
+	<div class="section" title="7.2&nbsp;Common problems"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="chapter-troubleshooting-common-issues"></a>7.2&nbsp;Common problems</h2></div></div></div>
+	  
+	  
+    <div class="simplesect" title="Time synchronization"><div class="titlepage"><div><div><h3 class="title"><a name="d4e916"></a>Time synchronization</h3></div></div></div>
+      
+      <p>Processing of SAML messages and assertions is often limited to a specific time window which e.g. prevents possibilities of replay attacks.
+      Validation of messages can fail when internal clocks of the IDP and SP machines are not synchronized. Make sure to use a       
+      <a class="ulink" href="http://www.freebsd.org/doc/handbook/network-ntp.html" target="_top">time synchronization service</a> on all systems in the federation.</p>
+    </div>
+    
+	</div>
+
+	
+</div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="chapter-idp-guide.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="integration.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="chapter-configuration-reference.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">6.&nbsp;IDP integration guide&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;Appendix&nbsp;A.&nbsp;Configuration reference</td></tr></table></div></body></html>
