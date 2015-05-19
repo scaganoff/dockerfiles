@@ -125,6 +125,17 @@
                     </constructor-arg>
                     <property name="parserPool" ref="parserPool"/>
                 </bean>
+                <bean class="org.opensaml.saml2.metadata.provider.HTTPMetadataProvider">
+                    <!-- URL containing the metadata -->
+                    <constructor-arg>
+                        <value type="java.lang.String">https://dev-570691.oktapreview.com/app/exk421w8ip6Dxo4ZN0h7/sso/saml/metadata</value>
+                    </constructor-arg>
+                    <!-- Timeout for metadata loading in ms -->
+                    <constructor-arg>
+                        <value type="int">5000</value>
+                    </constructor-arg>
+                    <property name="parserPool" ref="parserPool"/>
+                </bean>
             </list>
         </constructor-arg>
         <!-- OPTIONAL used when one of the metadata files contains information about this service provider -->
